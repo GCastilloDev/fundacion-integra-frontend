@@ -1,0 +1,30 @@
+<template>
+  <nav>
+    <v-app-bar elevate-on-scroll app color="white" height="72px">
+      <v-container class="d-flex align-center">
+        <v-col>
+          <v-img
+            alt="Vuetify Logo"
+            class="shrink mr-2"
+            contain
+            src="https://firebasestorage.googleapis.com/v0/b/integra-4aa35.appspot.com/o/imagenes-sistema%2Flogo-integra-small.png?alt=media&token=1e5e3392-f653-4372-92b6-3c437aeffd52"
+            transition="scale-transition"
+            width="60"
+          />
+        </v-col>
+
+        <v-spacer></v-spacer>
+
+        <v-btn depressed class="mr-2 normal--text font-weight-bold" text>Ingresar</v-btn>
+        <v-btn depressed color="azulIntegra" dark>Regístrate</v-btn>
+      </v-container>
+    </v-app-bar>
+  </nav>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style lang="scss" scoped>
+</style>
