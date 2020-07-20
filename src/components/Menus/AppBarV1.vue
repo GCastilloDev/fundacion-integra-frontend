@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <v-app-bar elevate-on-scroll app color="white" height="72px">
+    <v-app-bar elevate-on-scroll app :color="color" height="72px">
       <v-container class="d-flex align-center">
         <v-col>
           <v-img
@@ -15,7 +15,7 @@
 
         <v-spacer></v-spacer>
 
-        <v-btn depressed class="mr-2 normal--text font-weight-bold" text>Ingresar</v-btn>
+        <v-btn depressed :class="colorText" class="mr-2 font-weight-bold" text>Ingresar</v-btn>
         <v-btn depressed color="azulIntegra" dark>Regístrate</v-btn>
       </v-container>
     </v-app-bar>
@@ -23,7 +23,23 @@
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  data: () => ({
+    color: "transparent",
+    colorText: "white--text"
+    // normal--text
+  }),
+  methods: {
+    handleScroll() {
+      let alto = window.scrollY;
+      this.color = alto >= 200 ? 'white' : 'transparent';
+      this.colorText = alto >= 200 ? 'normal--text' : 'white--text';
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
